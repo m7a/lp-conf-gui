@@ -6,16 +6,20 @@
 <property name="mdpc.name"          value="mdvl-conf-gui"/>
 <property name="mdpc.section"       value="x11"/>
 <property name="mdpc.arch"          value="all"/>
-<property name="mdpc.conflicts"     value="mdvl-conf (&lt;= 1.0.221)"/>
+<property name="mdpc.conflicts"     value="mdvl-conf (&lt;= 1.0.221), mdvl-theme"/>
 <property name="mdpc.descrs"        value="MDVL GUI Configuration Package"/>
 <property name="mdpc.file.install">
 keys /etc/feh/keys
 settings.ini /etc/gtk-3.0
+gtkrc /etc/gtk-2.0
+mdvl-gtk2.0-theme /usr/share/mdvl-conf-gui
 </property>
 <property name="mdpc.descrl">
  This package contains configuration files for GUI programs.
  This includes visual settings like themes and keybindings like configuring
  the `feh` image viewer to behave similar to Ma_Sys.ma `plan_view.py`.
+ .
+ Includes GTK 2.0 theme from former package mdvl-conf-theme.
 </property>
 
 <!-- CI INTEGRATION -->
