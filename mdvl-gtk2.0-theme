@@ -4,7 +4,7 @@
 
 style "theme-default"
 {
-	#GtkButton      ::default_border    = { 0, 0, 0, 0 }
+	GtkButton      ::default_border    = { 0, 0, 0, 0 }
 	GtkRange       ::trough_border     = 0
 	GtkPaned       ::handle_size       = 6
 	GtkRange       ::slider_width      = 15
