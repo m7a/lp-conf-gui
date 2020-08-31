@@ -1,3 +1,9 @@
+mdvl-conf-gui (1.0.2) stable; urgency=medium
+
+  * Attempt to fix button deprecated issue.
+
+ -- Linux-Fan, Ma_Sys.ma <Ma_Sys.ma@web.de>  Mon, 31 Aug 2020 23:32:14 +0200
+
 mdvl-conf-gui (1.0.1) stable; urgency=medium
 
   * Add GTK 2.0 configuration (gtkrc)
