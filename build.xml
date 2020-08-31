@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="build">
+
+<!-- APPLICATION METADATA -->
+<property name="masysma.target"     value="_"/>
+<property name="mdpc.name"          value="mdvl-conf-gui"/>
+<property name="mdpc.section"       value="x11"/>
+<property name="mdpc.arch"          value="all"/>
+<property name="mdpc.conflicts"     value="mdvl-conf (&lt;= 1.0.221)"/>
+<property name="mdpc.descrs"        value="MDVL GUI Configuration Package"/>
+<property name="mdpc.file.install">
+keys /etc/feh/keys
+settings.ini /etc/gtk-3.0
+</property>
+<property name="mdpc.descrl">
+ This package contains configuration files for GUI programs.
+ This includes visual settings like themes and keybindings like configuring
+ the `feh` image viewer to behave similar to Ma_Sys.ma `plan_view.py`.
+</property>
+
+<!-- CI INTEGRATION -->
+<target name="package_triggered" depends="package">
+	<property name="masysma.ci.trigger" value="newver"/>
+</target>
+
+<!-- CONST TPL IMPORT -->
+<property environment="env"/>
+<condition property="masysma.internal.includepath.rel" value="${env.MDVL_CI_PHOENIX_ROOT}" else=".."><isset property="env.MDVL_CI_PHOENIX_ROOT"/></condition>
+<property name="masysma.internal.includepath" location="${masysma.internal.includepath.rel}"/>
+<property name="masysma.internal.loadpath" value="${masysma.internal.includepath}/co-build/ant-build-template.xml"/>
+<condition property="masysma.internal.load" value="file://${masysma.internal.loadpath}" else="https://raw.githubusercontent.com/m7a/co-build/master/ant-build-template.xml"><resourceexists><file file="${masysma.internal.loadpath}"/></resourceexists></condition>
+<import><url url="${masysma.internal.load}"/></import>
+
+</project>

@@ -1,0 +1,11 @@
+reload_image F5 C-R
+toggle_fullscreen F11
+action_0 Return
+action_1 1 n
+action_2 2 g
+action_3 3 b
+toggle_filenames p
+zoom_default 0
+zoom_fit dollar
+prev_img h BackSpace Left
+next_img l space Right

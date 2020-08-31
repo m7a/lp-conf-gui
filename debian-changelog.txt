@@ -1,0 +1,5 @@
+mdvl-conf-gui (1.0.0) stable; urgency=medium
+
+  * Package created with MDPC 2
+
+ -- Linux-Fan, Ma_Sys.ma <Ma_Sys.ma@web.de>  Mon, 31 Aug 2020 23:19:24 +0200
