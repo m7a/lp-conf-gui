@@ -12,7 +12,7 @@
 keys /etc/feh/keys
 settings.ini /etc/gtk-3.0
 gtkrc /etc/gtk-2.0
-mdvl-gtk2.0-theme /usr/share/mdvl-conf-gui
+gtk-2.0 /usr/share/themes/masysma
 </property>
 <property name="mdpc.descrl">
  This package contains configuration files for GUI programs.
