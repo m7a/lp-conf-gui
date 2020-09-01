@@ -9,7 +9,7 @@
 <property name="mdpc.conflicts"     value="mdvl-conf (&lt;= 1.0.221), mdvl-theme"/>
 <property name="mdpc.descrs"        value="MDVL GUI Configuration Package"/>
 <property name="mdpc.file.install">
-keys /etc/feh/keys
+keys /etc/feh
 settings.ini /etc/gtk-3.0
 gtkrc /etc/gtk-2.0
 gtk-2.0 /usr/share/themes/masysma
