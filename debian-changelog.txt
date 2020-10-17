@@ -1,3 +1,9 @@
+mdvl-conf-gui (1.0.7) stable; urgency=medium
+
+  * Remove depends on debianutils.
+
+ -- Linux-Fan, Ma_Sys.ma <Ma_Sys.ma@web.de>  Sun, 18 Oct 2020 00:53:12 +0200
+
 mdvl-conf-gui (1.0.6) stable; urgency=medium
 
   * Add i3 config and MDVL GUI startup script.

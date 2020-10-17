@@ -6,7 +6,6 @@
 <property name="mdpc.name"      value="mdvl-conf-gui"/>
 <property name="mdpc.section"   value="x11"/>
 <property name="mdpc.arch"      value="all"/>
-<property name="mdpc.depends"   value="debianutils"/> <!-- =run-parts -->
 <property name="mdpc.conflicts" value="mdvl-conf (&lt;= 1.0.222), mdvl-theme"/>
 <property name="mdpc.descrs"    value="MDVL GUI Configuration Package"/>
 <property name="mdpc.bdep"      value="config-package-dev"/>
