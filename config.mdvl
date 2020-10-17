@@ -1,0 +1,150 @@
+# Ma_Sys.ma i3 Configuration 1.0.17,
+# Copyright (c) 2014, 2015, 2017, 2018, 2020 Ma_Sys.ma.
+# For further info send an e-mail to Ma_Sys.ma@web.de.
+
+set $m Mod4
+floating_modifier $m
+
+#----------------------------------------------[ Window Management Shortcuts ]--
+
+bindsym $m+x              kill
+
+bindsym $m+h              focus left
+bindsym $m+j              focus down
+bindsym $m+k              focus up
+bindsym $m+l              focus right
+bindsym $m+a              focus parent
+bindsym $m+d              focus child
+bindsym $m+space          focus mode_toggle
+
+bindsym $m+Shift+h        move left
+bindsym $m+Shift+j        move down
+bindsym $m+Shift+k        move up
+bindsym $m+Shift+l        move right
+
+bindsym $m+s              split v
+bindsym $m+v              split h
+bindsym $m+Shift+s        layout splitv
+bindsym $m+Shift+v        layout splith
+bindsym $m+Shift+degree   layout stacked
+bindsym $m+asciicircum    layout default
+bindsym $m+Tab            layout tabbed
+
+bindsym $m+f              fullscreen
+bindsym $m+t              floating toggle
+
+bindsym $m+1              workspace 1
+bindsym $m+2              workspace 2
+bindsym $m+3              workspace 3
+bindsym $m+4              workspace 4
+bindsym $m+5              workspace 5
+bindsym $m+6              workspace 6
+bindsym $m+7              workspace 7
+bindsym $m+8              workspace 8
+bindsym $m+9              workspace 9
+bindsym $m+0              workspace 10
+bindsym $m+Shift+1        move container to workspace 1
+bindsym $m+Shift+2        move container to workspace 2
+bindsym $m+Shift+3        move container to workspace 3
+bindsym $m+Shift+4        move container to workspace 4
+bindsym $m+Shift+5        move container to workspace 5
+bindsym $m+Shift+6        move container to workspace 6
+bindsym $m+Shift+7        move container to workspace 7
+bindsym $m+Shift+8        move container to workspace 8
+bindsym $m+Shift+9        move container to workspace 9
+bindsym $m+Shift+0        move container to workspace 10
+bindsym $m+u              workspace next_on_output
+bindsym $m+Shift+u        workspace prev_on_output
+
+bindsym $m+i              scratchpad show
+bindsym $m+Shift+i        move scratchpad
+
+bindsym $m+r              mode "resize"
+mode "resize" {
+        bindsym h         resize shrink width  5 px or 5 ppt
+        bindsym j         resize grow   height 5 px or 5 ppt
+        bindsym k         resize shrink height 5 px or 5 ppt
+        bindsym l         resize grow   width  5 px or 5 ppt
+        bindsym Escape    mode "default"
+	bindsym $m        mode "default"
+}
+
+bindsym $m+q              restart
+bindsym $m+Shift+q        exit
+
+#-----------------------------------------------------------------[ Programs ]--
+
+bindsym Mod1+F1           exec /usr/bin/materm
+bindsym Mod1+F2           exec /usr/bin/dmenu_run
+bindsym Mod1+F3           exec /usr/bin/materm -e vifm /data/main
+bindsym Mod1+F5           exec /usr/bin/materm -e d5mantui
+bindsym Mod1+F7           exec GTK_THEME=Adwaita:dark /usr/bin/firefox
+bindsym Mod1+F9           exec /usr/bin/materm -e htop
+bindsym Mod1+F10          exec /usr/bin/virt-manager
+bindsym $m+Shift+Delete   exec /usr/bin/q
+
+bindsym $m+F12            exec /usr/bin/xwarppointer screen 1
+
+# requires xdotool, .mdvl/scrroot.txt, maim
+bindsym --release Print   exec "/bin/sh -ec 'dnam=\\"$(cat \\"$HOME/.mdvl/scrroot.txt\\")/$(date +%Y%m%d)\\"; [ -d \\"$dnam\\" ] || mkdir \\"$dnam\\"; fnam=\\"$(date +%Y%m%d%H%M%S).png\\"; maim -i $(xdotool getactivewindow) > \\"$dnam/$fnam\\"'"
+
+# Media controls
+# --------------
+
+# Audio volume + mute; https://unix.stackexchange.com/questions/439486
+bindsym XF86AudioMute        exec amixer sset Master toggle
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
+
+# Exotic things: Internet, Email, Search
+bindsym XF86HomePage exec GTK_THEME=Adwaita:dark /usr/bin/firefox
+bindsym XF86Mail     exec /usr/bin/materm -e alsamixer # for Laptop
+bindsym XF86Search   exec /usr/bin/materm -e d5mantui
+
+#------------------------------------------------------------------[ Autorun ]--
+
+exec /bin/run-parts --exit-on-error --regex=".*" --verbose /usr/lib/mdvl-gui.d
+
+#--------------------------------------------------------------------[ Theme ]--
+
+font -*-terminus-medium-*-normal-*-16-*-*-*-*-*-iso10646-1
+
+# class                  border   bg       fg       split
+client.focused           #cc4040  #cc4040  #ffffff  #ff0000
+client.focused_inactive  #806060  #806060  #aaaaaa  #bb0000
+client.unfocused         #201818  #201818  #505050  #400000
+client.urgent            #ffaa00  #ffaa00  #ffffff  #ffaa00
+
+#----------------------------------------------------------------------[ Bar ]--
+
+bar {
+	font -*-terminus-medium-*-normal-*-12-*-*-*-*-*-iso10646-1
+	status_command /usr/bin/mai3bar --json
+	position top
+	tray_output primary
+	colors {
+		#                   border  bg      fg
+		focused_workspace   #cc4040 #cc4040 #ffffff
+		active_workspace    #806060 #806060 #aaaaaa
+		inactive_workspace  #201818 #201818 #505050
+		urgent_workspace    #ffaa00 #ffaa00 #ffffff
+		background                  #000000
+		statusline                          #ffffff
+		separator                           #333333
+	}
+}
+
+#-------------------------------------------------------------------[ Quirks ]--
+
+# Borderless (use xprop)
+for_window [title="^Default - Wine desktop$"] border none
+for_window [title="Ma_Sys.ma Plan View"] border none
+for_window [class="feh"] border none
+
+# Floating
+for_window [title="^Descent 3$"] floating enable
+
+# Gimp
+#for_window [class="Gimp"] floating enable
+for_window [window_role="gimp-toolbox"] floating disable
+for_window [window_role="gimp-dock"] floating disable

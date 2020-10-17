@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+#DEBHELPER#
+
+chmod +x /usr/lib/mdvl-gui.d/*
