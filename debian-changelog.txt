@@ -1,3 +1,10 @@
+mdvl-conf-gui (1.0.8) stable; urgency=medium
+
+  * Add /etc/skel configuration for xscreensaver and xsession.
+    This is intended to reproduce the typical MDVL GUI on live systems.
+
+ -- Linux-Fan, Ma_Sys.ma <Ma_Sys.ma@web.de>  Sun, 18 Oct 2020 14:16:06 +0200
+
 mdvl-conf-gui (1.0.7) stable; urgency=medium
 
   * Remove depends on debianutils.

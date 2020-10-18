@@ -6,7 +6,7 @@
 <property name="mdpc.name"      value="mdvl-conf-gui"/>
 <property name="mdpc.section"   value="x11"/>
 <property name="mdpc.arch"      value="all"/>
-<property name="mdpc.conflicts" value="mdvl-conf (&lt;= 1.0.222), mdvl-theme"/>
+<property name="mdpc.conflicts" value="mdvl-conf (&lt;= 1.0.222), mdvl-theme, mdvl-conf-skel (&lt;= 1.0.70)"/>
 <property name="mdpc.descrs"    value="MDVL GUI Configuration Package"/>
 <property name="mdpc.bdep"      value="config-package-dev"/>
 <property name="mdpc.file.install">
@@ -16,6 +16,8 @@ gtkrc /etc/gtk-2.0
 gtk-2.0 /usr/share/themes/masysma
 config.mdvl /etc/i3
 mdvl-gui.d /usr/lib
+etc-skel/.xscreensaver /etc/skel
+etc-skel/.xsession /etc/skel
 </property>
 <property name="mdpc.file.displace">
 /etc/i3/config.mdvl
