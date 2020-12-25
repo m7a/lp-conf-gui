@@ -69,6 +69,11 @@ mode "resize" {
 	bindsym $m        mode "default"
 }
 
+bindsym $m+Escape         mode "passthrough"
+mode "passthrough" {
+	bindsym $m+Escape mode "default"
+}
+
 bindsym $m+q              restart
 bindsym $m+Shift+q        exit
 

@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh -eu
 
 # -- Keyboard --
 /usr/bin/xmodmap
