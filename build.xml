@@ -28,6 +28,8 @@ etc-skel/.xsession /etc/skel
  the `feh` image viewer to behave similar to Ma_Sys.ma `plan_view.py`.
  .
  Includes GTK 2.0 theme from former package mdvl-conf-theme.
+ .
+ Recommended but not available in Debian 10 yet: tcl-awthemes
 </property>
 
 <!-- CI INTEGRATION -->

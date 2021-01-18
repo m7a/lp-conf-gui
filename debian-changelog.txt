@@ -1,3 +1,9 @@
+mdvl-conf-gui (1.0.10) stable; urgency=medium
+
+  * Add dark theme for password-gorilla (if installed).
+
+ -- Linux-Fan, Ma_Sys.ma <Ma_Sys.ma@web.de>  Mon, 18 Jan 2021 20:53:01 +0100
+
 mdvl-conf-gui (1.0.9) stable; urgency=medium
 
   * Use now path for ma_infobg (if present).
