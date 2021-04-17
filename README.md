@@ -132,30 +132,30 @@ Directory `/usr/lib/mdvl-gui.d` is checked for scripts to automatically invoke
 upon starting i3 with the configuration described above. Relevant default
 configuration is found in file `00-initial.sh`:
 
-{.code shell}
+~~~{.bash}
+# -- Keyboard --
+/usr/bin/xmodmap
+setxkbmap -layout de -variant deadgraveacute
+# Speed up key repeat
+xset r rate 270 30
+# disable bell
+xset b 0
 
-	# -- Keyboard --
-	/usr/bin/xmodmap
-	setxkbmap -layout de -variant deadgraveacute
-	# Speed up key repeat
-	xset r rate 270 30
-	# disable bell
-	xset b 0
+# -- Theme for password-gorilla --
+if [ -d /usr/share/tcltk/awthemes ]; then
+	echo "*TkTheme: awdark" | xrdb -merge
+fi
 
-	# -- Theme for password-gorilla --
-	if [ -d /usr/share/tcltk/awthemes ]; then
-		echo "*TkTheme: awdark" | xrdb -merge
-	fi
+# -- Background Processes --
+/usr/bin/screenindex -l -g &
 
-	# -- Background Processes --
-	/usr/bin/screenindex -l -g &
-
-	if [ "$(head -c 3 /etc/hostname)" = "vm-" ]; then
-		/usr/bin/spice-vdagent &
-		xrandr --dpi 109
-	else
-		/usr/bin/xscreensaver -no-splash &
-	fi
+if [ "$(head -c 3 /etc/hostname)" = "vm-" ]; then
+	/usr/bin/spice-vdagent &
+	xrandr --dpi 109
+else
+	/usr/bin/xscreensaver -no-splash &
+fi
+~~~
 
 The keyboard configuration is set to German keyboard layout, faster repeat
 rate and all bell sounds are disabled. For details on the effects of the
