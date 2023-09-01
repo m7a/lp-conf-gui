@@ -7,7 +7,7 @@ lang: en-US
 author: ["Linux-Fan, Ma_Sys.ma (Ma_Sys.ma@web.de)"]
 keywords: ["mdvl", "conf", "dotfiles", "gui", "mdvl-conf-gui", "x11", "linux"]
 x-masysma-version: 1.0.0
-x-masysma-website: https://masysma.lima-city.de/32/conf-gui.xhtml
+x-masysma-website: https://masysma.net/32/conf-gui.xhtml
 x-masysma-repository: https://www.github.com/m7a/lp-conf-gui
 x-masysma-owned: 1
 x-masysma-copyright: |
