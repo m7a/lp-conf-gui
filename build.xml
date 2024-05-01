@@ -8,7 +8,6 @@
 <property name="mdpc.arch"      value="all"/>
 <property name="mdpc.conflicts" value="mdvl-conf (&lt;= 1.0.222), mdvl-theme, mdvl-conf-skel (&lt;= 1.0.70)"/>
 <property name="mdpc.descrs"    value="MDVL GUI Configuration Package"/>
-<property name="mdpc.bdep"      value="config-package-dev"/>
 <property name="mdpc.file.install">
 keys /etc/feh
 settings.ini /etc/gtk-3.0
